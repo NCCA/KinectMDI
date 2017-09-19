@@ -134,7 +134,7 @@ void PointCloud::loadMatricesToShader()
 
   ngl::Mat4 MVP;
   MVP= m_transform.getMatrix()*m_cam->getVPMatrix();
-  shader->setShaderParamFromMat4("MVP",MVP);
+  shader->setUniform("MVP",MVP);
 }
 
 float PointCloud::rawDepthToMeters(int depthValue)
